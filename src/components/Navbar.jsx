@@ -15,59 +15,61 @@ const Navbar = () => {
       "CREDITINFO\tsachin\t98091\t10000\t0\t393.01\t0\t0\t0\nOK\nUSERINFO\tOK\tY\tYES\tN~\tSachin\t1\t0\tFalse\t~(#)\n",
     ],
   ];
-  console.log(rData);
+  //console.log(rData);
 
   for (let i = 0; i < rData.length; i++) {
     if (rData[i].toString() !== "") {
-      const innerArray = rData[i];
-      const temp = [];
-      const result = [];
+      var innerArray = rData[i];
+      var temp = [];
+      var result = [];
 
       for (let j = 0; j < innerArray.length; j++) {
         const splitArray = innerArray[j].split(/[\t\n]/);
         temp.push(splitArray.slice(0, -1));
         result.push(temp);
-        ProcessCommands(temp[j][i], result);
+        //ProcessCommands(temp[j][i], result);
       }
     }
   }
-  function ProcessCommands(temp, result) {
-    console.log(result);
-    //console.log(temp);
-    switch (temp) {
-      case "RATE":
-        console.log(`The rate is ${result[0][0][1]} `);
-        break;
-      case "USDPLAYER":
-        console.log(`USDPLAYER response is ${result[1][1][1]}`);
-        break;
-      case "USERSIGNUPTYPE":
-        console.log(`User sign up type is${result[2][2][1]}`);
-        break;
-      case "IPPORTLIST":
-        console.log(
-          `IP port list is${result[3][3][1]}   and the bad beat value is  ${result[3][3][2]}`
-        );
-        break;
-      case "BIGBADBEATVALUE":
-        console.log(`The big bad beat value is ${result[4][4][1]} `);
-        break;
-      case "ALLOWTEENPATTI":
-        console.log(`Allow teen patti response is ${result[5][5][1]} `);
-        break;
-      case "CREDITINFO":
-        console.log(`Credit info is  and user info is ${result[6][6][1]} `);
-        break;
-      case "PLAYERNAME":
-        console.log(`Player  the game ${result[7][7][1]} `);
-        break;
-      case "TABLECOUNT":
-        console.log(`There are  tables with players ${result[8][8][1]} `);
-        break;
-      default:
-        console.log(`Unhandled response: response ${result[9][9][1]} `);
-    }
-  }
+  // function ProcessCommands(temp, result) {
+  //   console.log(result);
+  //   //console.log(temp);
+  //   switch (temp) {
+  //     case "RATE":
+  //       console.log(`The rate is ${result[0][0][1]} `);
+  //       break;
+  //     case "USDPLAYER":
+  //       console.log(`USDPLAYER response is ${result[1][1][1]}`);
+  //       break;
+  //     case "USERSIGNUPTYPE":
+  //       console.log(`User sign up type is${result[2][2][1]}`);
+  //       break;
+  //     case "IPPORTLIST":
+  //       console.log(
+  //         `IP port list is${result[3][3][1]}   and the bad beat value is  ${result[3][3][2]}`
+  //       );
+  //       break;
+  //     case "BIGBADBEATVALUE":
+  //       console.log(`The big bad beat value is ${result[4][4][1]}`);
+  //       break;
+  //     case "ALLOWTEENPATTI":
+  //       console.log(`Allow teen patti response is ${result[5][5][1]} `);
+  //       break;
+  //     case "CREDITINFO":
+  //       console.log(`Credit info is  and user info is ${result[6][6][1]} `);
+  //       break;
+  //     case "PLAYERNAME":
+  //       console.log(`Player  the game ${result[7][7][1]} `);
+  //       break;
+  //     case "TABLECOUNT":
+  //       console.log(`There are  tables with players ${result[8][8][1]}`);
+  //       break;
+  //     default:
+  //       console.log(`Unhandled response: response ${result[9][9][1]}`);
+  //   }
+  // }
+  //console.log(temp);
+  //console.log(result);
 
   return (
     <div className="App">
